@@ -9,4 +9,17 @@ package ru.naumen.collection.task2;
 public class Ticket {
     private long id;
     private String client;
+
+    public Ticket(long id, String client){
+        this.id = id;
+        this.client = client;
+    }
+
+    public long getId(){
+        return this.id;
+    }
+    
+    public String getClient() {
+        return this.client;
+    }
 }

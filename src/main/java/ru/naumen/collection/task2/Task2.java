@@ -1,5 +1,9 @@
 package ru.naumen.collection.task2;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Дано:
  * <pre>
@@ -23,6 +27,18 @@ package ru.naumen.collection.task2;
  * @since 19.10.2023
  */
 public class Task2 {
+    HashMap<Long, Product> combos;
 
-    // TODO
+    /**
+     * <p>
+     *     Операция чтения объекта из HashMap имеет сложность O(1)
+     * </p><br/>
+     * <p>
+     *     Итоговая сложность: O(1)
+     * </p>
+     * @since 24.10.2023
+     */
+    public Product getTicketCombos(Ticket ticket){
+        return this.combos.getOrDefault(ticket.getId(), Product.EMPTY);
+    }
 }

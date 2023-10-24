@@ -2,8 +2,7 @@ package ru.naumen.collection.task1;
 
 import ru.naumen.collection.task2.Ticket;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * Дано:
@@ -35,9 +34,20 @@ public class Task1 {
 
     /**
      * Возвращает дубликаты пользователей, которые есть в обеих коллекциях
+     * <p>Пусть коллекция collA имеет N объектов, collB - M объектов.</p>
+     * <p>Преобразование коллекции collA в множество имеет сложность O(N)</p>
+     * <p>Итерирование по коллекции collB имеет сложность O(M)</p>
+     * <p>Операция contains() по множеству collASet имеет сложность O(N)</p><br/>
+     * <p>Итогования сложность: O(2*N) + O(M)</p>
+     *
+     * @since 24.10.2023
      */
     public static List<User> findDuplicates(Collection<User> collA, Collection<User> collB) {
-        // TODO
-        return null;
+        Set<User> collASet = new HashSet<>(collA);
+        List<User> duplicated = new ArrayList<>();
+        for (User user: collB)
+            if (collASet.contains(user))
+                duplicated.add(user);
+        return duplicated;
     }
 }
