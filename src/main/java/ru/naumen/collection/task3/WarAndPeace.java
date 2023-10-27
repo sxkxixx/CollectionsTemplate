@@ -33,7 +33,7 @@ public class WarAndPeace {
      */
     public static void main(String[] args) {
         WordParser parser = new WordParser(WAR_AND_PEACE_FILE_PATH);
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new LinkedHashMap<>();
 
         parser.forEachWord(word -> map.put(word, map.getOrDefault(word, 0) + 1));
         List<Map.Entry<String, Integer>> sortedEntries = getSortedEntries(map);
